@@ -5,6 +5,7 @@ public class SnakeAndLadder {
         System.out.println("Welcome to Snake and Ladder program");
 
         int player1position=0;
-        System.out.println("Player1 at position :"+player1position);
+        int dice = (int)Math.floor(Math.random()*6)+1;
+        System.out.println("Dice roll value :"+dice);
     }
 }
