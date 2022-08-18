@@ -1,11 +1,34 @@
 package com.bridgelabz;
 
+import java.util.Random;
+
 public class SnakeAndLadder {
+    static final int noPlay = 0;
+    static final int ladder = 1;
+    static final int snake = 2;
+
     public static void main(String[] args) {
         System.out.println("Welcome to Snake and Ladder program");
+        int position = 0;
 
-        int player1position=0;
-        int dice = (int)Math.floor(Math.random()*6)+1;
-        System.out.println("Dice roll value :"+dice);
+        Random random = new Random();
+        int dice = random.nextInt(6) + 1;
+        System.out.println("dice: " + dice);
+        int optCheck = random.nextInt(3);
+        System.out.println("optCheck: " + optCheck);
+
+        if (optCheck == ladder) {
+            System.out.println("Ladder");
+            position = position + dice;
+        } else if (optCheck == snake) {
+            System.out.println("Snake");
+            position = position - dice;
+        } else {
+            System.out.println("No Play");
+        }
+        if (position < 0)
+            position = 0;
+        System.out.println("position: " + position);
     }
+
 }
